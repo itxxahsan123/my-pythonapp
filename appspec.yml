@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /home/ubuntu/my-pythonapp
 hooks:
+  BeforeInstall:
+    - location: cleanup.sh  # Script to clean up existing files
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
     - location: install_dependencies.sh
       timeout: 300
