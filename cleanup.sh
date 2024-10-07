@@ -1,10 +1,5 @@
-#!/bin/bash
-# Remove the install_dependencies.sh file if it exists
-if [ -f /home/ubuntu/my-pythonapp/install_dependencies.sh ]; then
-    sudo rm /home/ubuntu/my-pythonapp/install_dependencies.sh
-fi
-
-# Remove the app.py file if it exists
-if [ -f /home/ubuntu/my-pythonapp/app.py ]; then
-    sudo rm /home/ubuntu/my-pythonapp/app.py
-fi
+# cleanup.sh
+# Remove any existing files before copying new ones
+rm -f /home/ubuntu/my-pythonapp/install_dependencies.sh
+rm -f /home/ubuntu/my-pythonapp/app.py
+rm -f /home/ubuntu/my-pythonapp/cleanup.sh
