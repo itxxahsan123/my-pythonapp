@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/my_python_app
+    destination: /home/ubuntu/my-pythonapp
 hooks:
   AfterInstall:
     - location: install_dependencies.sh
