@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo systemctl start python-app.service
+sudo systemctl start my-pythonapp.service
