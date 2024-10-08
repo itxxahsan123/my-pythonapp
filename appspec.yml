@@ -5,18 +5,15 @@ files:
     destination: /home/ubuntu/my-pythonapp
 hooks:
   BeforeInstall:
-    - location: cleanup.sh
+    - location: scripts/cleanup.sh
       timeout: 300
-      runas: ubuntu  # Ensure this user has appropriate permissions
+      runas: ubuntu
   AfterInstall:
-    - location: install_dependencies.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ubuntu
   ApplicationStart:
-    - location: start_service.sh
+    - location: scripts/restart_gunicorn.sh
       timeout: 300
       runas: ubuntu
-  AfterAllowTraffic:
-    - location: scripts/restart_gunicorn.sh
-      timeout: 60
-      runas: root
+
