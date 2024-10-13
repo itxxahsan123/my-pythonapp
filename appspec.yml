@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/my-pythonapp
+
 hooks:
   BeforeInstall:
     - location: cleanup.sh
@@ -13,10 +14,7 @@ hooks:
       timeout: 300
       runas: ubuntu
   ApplicationStart:
-    - location: start_service.sh
+    - location: scripts/start_service.sh  # This should restart Gunicorn
       timeout: 300
       runas: ubuntu
-  AfterAllowTraffic:
-    - location: scripts/restart_gunicorn.sh
-      timeout: 60
-      runas: root
+
